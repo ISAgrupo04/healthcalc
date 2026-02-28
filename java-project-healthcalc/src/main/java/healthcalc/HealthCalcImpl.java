@@ -78,5 +78,6 @@ public class HealthCalcImpl implements HealthCalc {
         double ibw = (height - 100) - ((height-150)/v_aux);
         return ibw;
     }
+
     
 }
