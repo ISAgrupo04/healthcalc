@@ -79,5 +79,12 @@ public class HealthCalcImpl implements HealthCalc {
         return ibw;
     }
 
-    
+    @Override
+    public double bsa(double weight, double height) throws InvalidHealthDataException {
+        if (weight <= 0 || height <= 0) {
+            throw new InvalidHealthDataException("The weight and height must be positive.");
+        }
+        return Math.sqrt((height * weight) / 3600.0);
+    }
+
 }

@@ -54,4 +54,14 @@ public interface HealthCalc {
 	 * @return	  		The Ideal Body Weight of the person (kg).
 	 * @throws Exception
 	 */
+
+	public double bsa(double weight, double height) throws InvalidHealthDataException;
+	/**
+     * Calculate the Body Surface Area (BSA) of a person using the Mosteller formula.
+     * Formula: BSA (m2) = square root of ((height (cm) * weight (kg)) / 3600)
+     * * @param weight    Weight of the person (kg).
+     * @param height    Height of the person (cm).
+     * @return          The Body Surface Area of the person (m2).
+     * @throws Exception
+     */
 }
