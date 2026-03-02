@@ -276,6 +276,19 @@ Para cada categoría, probamos valores que están justo en el límite para asegu
 
 </details>
 
+<details>
+<summary><b>Pruebas de Área de Superficie Corporal (ASC) o Body Surface Area (BSA)</b></summary>
+
+* **Cálculo correcto:** Se valida que, al introducir valores normales de peso y altura, el sistema calcule ASC o BSA de forma coherente usando la fórmula de Mosteller
+ * **Fórmula (Mosteller):** $BSA = \sqrt{\frac{\text{altura (cm)} \times \text{peso (kg)}}{3600}}$
+
+ * **Protección ante datos imposibles:** 
+ * El sistema debe rechazar pesos menores a 0 kg o superiores a 600 kg.
+ * El sistema debe rechazar alturas menores a 0 cm o superiores a 300 cm.
+ * Se verifica que no se acepten valores negativos o no numéricos.
+
+ * **Validación de límites fisiológicos:** El resultado del cálculo no debe de ser superior a (4 \, m^2\) o menores a (0.01 \, m^2\), ya que se consideran fuera del rango fisiológico.
+</details>
 
 ## Instalación y ejecución
 
