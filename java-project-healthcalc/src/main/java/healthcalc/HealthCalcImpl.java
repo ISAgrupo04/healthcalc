@@ -22,22 +22,21 @@ public class HealthCalcImpl implements HealthCalc {
         // }
         if (bmi < 16) {
             result = "Severe thinness";
-        } else if (bmi >= 16 && bmi < 17) {
+        } else if (bmi < 17) {
             result = "Moderate thinness";
-        } else if (bmi >= 17 && bmi < 18.5) {
+        } else if (bmi < 18.5) {
             result = "Mild thinness";
-        } else if (bmi >= 18.5 && bmi < 25) {
+        } else if (bmi < 25) {
             result = "Normal weight";
-        } else if (bmi >= 25 && bmi < 30) {
+        } else if (bmi < 30) {
             result = "Overweight";
-        } else if (bmi >= 30 && bmi < 35) {
+        } else if (bmi < 35) {
             result = "Obese Class I";
-        } else if (bmi >= 35 && bmi < 40) {
+        } else if (bmi < 40) {
             result = "Obese Class II";
-        } else if (bmi >= 40) {
-            result = "Obese Class III";
-        }
-        return result;
+        } else {
+            result = "Obese Class III";}
+        return result;  
     }
 
     @Override
