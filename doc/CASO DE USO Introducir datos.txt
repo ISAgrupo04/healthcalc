@@ -1,0 +1,29 @@
+CASO DE USO: Introducir datos
+ID: CU-04
+
+ACTOR PRINCIPAL: Usuario
+ÁMBITO: Health Calculator
+NIVEL: Objetivo de usuario
+DESCRIPCIÓN: El usuario introduce los datos requeridos para calcular las diferentes métricas de la calculadora.
+
+INTERESADOS: 
+El usuario: Quiere tener información de sus datos biométricos.
+
+PRECONDICIONES: 
+El sistema debe estar iniciado. 
+El usuario debe haber seleccionado una métrica específica.
+
+DISPARADOR: El sistema requiere datos para el cálculo de métricas.
+
+GARANTÍA DE ÉXITO: El sistema guarda los datos que ha introducido el usuario.
+
+GARANTÍA MÍNIMA: El sistema lanza un mensaje de estado. 
+
+ESCENARIO PRINCIPAL DE ÉXITO:
+El usuario ingresa los datos.
+El sistema valida los datos introducidos.
+El sistema guarda los datos validados en la memoria. 
+
+EXTENSIONES:
+2a. Los datos introducidos no son válidos y el sistema devuelve un error. Vuelve al paso 1.
+3a. Error al guardar los datos. Ya se han registrado otros datos más antiguos y no se sobreescriben bien. Vuelve al paso 1.
