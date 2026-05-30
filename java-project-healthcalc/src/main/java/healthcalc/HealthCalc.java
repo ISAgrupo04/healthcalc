@@ -22,7 +22,7 @@ public interface HealthCalc {
 	 * @return	  		The BMI classification of the person.
 	 * @throws Exception
 	 */
-	public String category(Person person) throws InvalidHealthDataException;
+	public BMICategory category(Person person) throws InvalidHealthDataException;
 	
 	/**
 	 * Calculate the Body Mass Index (BMI) of a person with the Harris-Benedict formula:
@@ -31,7 +31,7 @@ public interface HealthCalc {
 	 * @return	  		The Body Mass Index of the person (kg/m2).
 	 * @throws Exception
 	 */
-	public double basalMetabolicIndex(Person person) throws InvalidHealthDataException;
+	public float basalMetabolicIndex(Person person) throws InvalidHealthDataException;
 
 	/**
 =======
@@ -41,7 +41,7 @@ public interface HealthCalc {
 	 * @return	  		The Ideal Body Weight of the person (kg).
 	 * @throws Exception
 	 */
-	public double idealBodyWeight(Person person) throws InvalidHealthDataException;
+	public float idealBodyWeight(Person person) throws InvalidHealthDataException;
 
 	/**
 	 * Calculate the IBW of a person using the Lorentz formula:
@@ -53,7 +53,7 @@ public interface HealthCalc {
 	 * @throws Exception
 	 */
 
-	public double bodySurfaceArea(Person person) throws InvalidHealthDataException;
+	public float bodySurfaceArea(Person person) throws InvalidHealthDataException;
 	/**
      * Calculate the Body Surface Area (BSA) of a person using the Mosteller formula.
      * Formula: BSA (m2) = square root of ((height (cm) * weight (kg)) / 3600)

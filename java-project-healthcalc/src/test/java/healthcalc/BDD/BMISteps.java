@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import healthcalc.Person;
 import healthcalc.PersonImpl;
+import healthcalc.BMICategory;
 import healthcalc.HealthCalc;
 import healthcalc.HealthCalcImpl;
 import io.cucumber.java.en.Given;
@@ -16,7 +17,7 @@ public class BMISteps {
     private double weight;
     private double height;
     private double bmiResult;
-    private String classificationResult;
+    private BMICategory classificationResult;
     private Exception exception;
 
     // --- BACKGROUND  ---
@@ -84,7 +85,7 @@ public class BMISteps {
 
     @Then("el resultado debe ser {string}")
     public void el_resultado_debe_ser(String expected) {
-        assertEquals(expected, this.classificationResult);
+        assertEquals(expected, this.classificationResult.getLabel());
     }
 
     // --- MANEJO DE EXCEPCIONES ---

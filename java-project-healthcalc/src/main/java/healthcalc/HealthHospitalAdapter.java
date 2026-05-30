@@ -15,9 +15,9 @@ public class HealthHospitalAdapter implements HealthHospital {
         Person person = new PersonImpl(pesoKg, altura, null, 0);
         // Pasamos "altura" directamente, ya que viene en metros (ej. 1.83) y bmi() espera metros.
         double bmiResult = calculator.basalMetabolicIndex(person);
-        String clasificacion = calculator.category(person);
+        BMICategory clasificacion = calculator.category(person);
 
-        return new Tuple<>((float) bmiResult, clasificacion);
+        return new Tuple<>((float) bmiResult, clasificacion.getLabel());
     }
 
     @Override

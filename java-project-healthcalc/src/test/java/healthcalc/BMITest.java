@@ -120,9 +120,9 @@ public class BMITest {
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
 
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expected, result);
+            assertEquals(expected, result.getLabel());
         }
 
         @ParameterizedTest(name = "BMI {0} debe ser clasificado como Moderate thinness")
@@ -134,9 +134,9 @@ public class BMITest {
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
 
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expected, result);
+            assertEquals(expected, result.getLabel());
         }
 
         @ParameterizedTest(name = "BMI {0} debe ser clasificado como Mild thinness")
@@ -148,9 +148,9 @@ public class BMITest {
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
 
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expected, result);
+            assertEquals(expected, result.getLabel());
         }
 
         @ParameterizedTest(name = "BMI {0} debe ser clasificado como Normal weight")
@@ -161,9 +161,9 @@ public class BMITest {
 
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expected, result);
+            assertEquals(expected, result.getLabel());
         }
 
         @ParameterizedTest(name = "BMI {0} debe ser clasificado como Overweight")
@@ -174,9 +174,9 @@ public class BMITest {
 
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expected, result);
+            assertEquals(expected, result.getLabel());
         }
 
         @ParameterizedTest(name = "BMI {0} debe ser clasificado como Obese Class I")
@@ -187,9 +187,9 @@ public class BMITest {
 
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expected, result);
+            assertEquals(expected, result.getLabel());
         }
 
         @ParameterizedTest(name = "BMI {0} debe ser clasificado como Obese Class II")
@@ -200,9 +200,9 @@ public class BMITest {
 
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expected, result);
+            assertEquals(expected, result.getLabel());
         }
 
         @ParameterizedTest(name = "BMI {0} debe ser clasificado como Obese Class III")
@@ -213,9 +213,9 @@ public class BMITest {
 
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expected, result);
+            assertEquals(expected, result.getLabel());
         }
 
         @ParameterizedTest(name = "BMI máximo extremo: {0}")
@@ -241,14 +241,14 @@ public class BMITest {
             double pesoMedio = bmiMedio * Math.pow(altura, 2);
             double pesoSuperior = bmiLimiteSuperior * Math.pow(altura, 2);
 
-            String resultInferior = healthCalc.category(new PersonImpl(pesoInferior, altura, null, 0));
-            String resultMedio = healthCalc.category(new PersonImpl(pesoMedio, altura, null, 0));
-            String resultSuperior = healthCalc.category(new PersonImpl(pesoSuperior, altura, null, 0));
+            BMICategory resultInferior = healthCalc.category(new PersonImpl(pesoInferior, altura, null, 0));
+            BMICategory resultMedio = healthCalc.category(new PersonImpl(pesoMedio, altura, null, 0));
+            BMICategory resultSuperior = healthCalc.category(new PersonImpl(pesoSuperior, altura, null, 0));
 
             assertAll(
-                () -> assertEquals("Overweight", resultInferior),
-                () -> assertEquals("Overweight", resultMedio),
-                () -> assertEquals("Overweight", resultSuperior)
+                () -> assertEquals(BMICategory.OVERWEIGHT, resultInferior),
+                () -> assertEquals(BMICategory.OVERWEIGHT, resultMedio),
+                () -> assertEquals(BMICategory.OVERWEIGHT, resultSuperior)
             );
         }
 
@@ -273,9 +273,9 @@ public class BMITest {
         void testBmiClassificationLimites(double bmi, String expectedCategory) throws InvalidHealthDataException {
             double altura = 1.75;
             double peso = bmi * Math.pow(altura, 2);
-            String result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
+            BMICategory result = healthCalc.category(new PersonImpl(peso, altura, null, 0));
 
-            assertEquals(expectedCategory, result);
+            assertEquals(expectedCategory, result.getLabel());
         }
     }
 
