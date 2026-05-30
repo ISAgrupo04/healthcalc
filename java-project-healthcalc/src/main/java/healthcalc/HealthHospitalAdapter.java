@@ -14,8 +14,8 @@ public class HealthHospitalAdapter implements HealthHospital {
         
         Person person = new PersonImpl(pesoKg, altura, null, 0);
         // Pasamos "altura" directamente, ya que viene en metros (ej. 1.83) y bmi() espera metros.
-        double bmiResult = calculator.bmi(person);
-        String clasificacion = calculator.bmiClassification(person);
+        double bmiResult = calculator.basalMetabolicIndex(person);
+        String clasificacion = calculator.category(person);
 
         return new Tuple<>((float) bmiResult, clasificacion);
     }
@@ -40,7 +40,7 @@ public class HealthHospitalAdapter implements HealthHospital {
         Person person = new PersonImpl(0, alturaCm, generoCalculadora, 0);
 
         // 3. Llamamos a la calculadora base con la letra correcta en inglés
-        double pesoIdeal = calculator.ibw(person);
+        double pesoIdeal = calculator.idealBodyWeight(person);
         
         return (int) pesoIdeal;
     }

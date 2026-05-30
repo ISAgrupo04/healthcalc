@@ -103,7 +103,7 @@ public class CtrBSA implements ActionListener {
         // ============ Probamos que el resultado es posible ============
         try {
             Person person = new PersonImpl(weight, height, null, 0);
-            double bsa = modeloBSA.bsa(person);
+            double bsa = modeloBSA.bodySurfaceArea(person);
             String out = String.format("Resultado BSA: %.2f", bsa);
             
             vistaBSA.setResult(out);

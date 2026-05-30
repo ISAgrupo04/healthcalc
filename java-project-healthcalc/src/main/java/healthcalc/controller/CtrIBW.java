@@ -77,7 +77,7 @@ public class CtrIBW implements ActionListener {
         // Valores fisiológicos
         try {
         	Person person = new PersonImpl(0, heightCm, gender, 0);
-        	double ibw = modeloIBW.ibw(person);
+        	double ibw = modeloIBW.idealBodyWeight(person);
         	vistaIBW.setResult(String.format("Resultado IBW: %.2f", ibw));
         } catch (InvalidHealthDataException ex) {
             String errorMsg = ex.getMessage().toLowerCase();

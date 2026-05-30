@@ -19,8 +19,8 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public String bmiClassification(Person person) throws InvalidHealthDataException {
-        double bmi = bmi(person);
+    public String category(Person person) throws InvalidHealthDataException {
+        double bmi = basalMetabolicIndex(person);
         // Tratamos los posibles errores
         if (bmi < 0) {
             throw new InvalidHealthDataException("BMI must be a positive value.");
@@ -37,7 +37,7 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public double bmi(Person person) throws InvalidHealthDataException {
+    public double basalMetabolicIndex(Person person) throws InvalidHealthDataException {
         double weight = person.weight();
         double height = person.height();
         if (weight <= 0) {
@@ -56,7 +56,7 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public double ibw(Person person) throws InvalidHealthDataException {
+    public double idealBodyWeight(Person person) throws InvalidHealthDataException {
         double height = person.height();
         Gender gender = person.gender();
         // Initial exception
@@ -80,7 +80,7 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public double bsa(Person person) throws InvalidHealthDataException {
+    public double bodySurfaceArea(Person person) throws InvalidHealthDataException {
         double weight = person.weight();
         double height = person.height();
 

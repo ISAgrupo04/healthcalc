@@ -42,7 +42,7 @@ public class BSASteps {
     public void el_sistema_intenta_calcular_el_bsa() {
         try {
             Person person = new PersonImpl(this.weight, this.height, null, 0);
-            this.result = calculator.bsa(person);
+            this.result = calculator.bodySurfaceArea(person);
             this.exception = null;
         } catch (Exception e) {
             this.exception = e; 

@@ -96,11 +96,11 @@ public class CtrBMI implements ActionListener {
         
         try {
             Person person = new PersonImpl(weight, heightCm / 100.0, null, 0);
-            double bmi = modelo.bmi(person);
+            double bmi = modelo.basalMetabolicIndex(person);
             String out = String.format("Resultado BMI: %.2f", bmi);
 
             if (vistaBMI.wantsClassification()) {
-                out += " - " + modelo.bmiClassification(person);
+                out += " - " + modelo.category(person);
             }
             
             vistaBMI.setResult(out);
